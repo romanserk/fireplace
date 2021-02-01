@@ -1,6 +1,30 @@
 :root {
   --goldColor: #a59771;
+  --goldColorDark: #817655;
+  --fontLighterColor: #808080;
   --mobileWidth: 768px;
+}
+
+@font-face {
+  font-family: 'yehudaBold';
+  src: url(./fonts/yehudaclm-bold-webfont.woff);
+}
+@font-face {
+  font-family: 'yehudaLight';
+  src: url(./fonts/yehudaclm-light-webfont.woff);
+}
+
+@font-face {
+  font-family: 'davidBold';
+  src: url(./fonts/DavidLibre-Bold.ttf);
+}
+@font-face {
+  font-family: 'davidLight';
+  src: url(./fonts/DavidLibre-Regular.ttf);
+}
+@font-face {
+  font-family: 'yehudaMedium';
+  src: url(./fonts/DavidLibre-Medium.ttf);
 }
 
 
@@ -42,9 +66,13 @@
   max-width: 500px;
 }
 
-.lower-section {
+.lower-section-100hw {
   height: 100vh;
   width: 100vw;
+  background: white;
+  position: relative;
+}
+.lower-section {
   background: white;
   position: relative;
 }
