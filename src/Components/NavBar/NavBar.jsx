@@ -15,8 +15,12 @@ const NavBar = (props) => {
       const window = e.currentTarget;
       if (y > window.scrollY) {
         setScrolled(styles.slideDown);
+        setMobileButtonClass("");
       } else if (y < window.scrollY) {
-        setScrolled(styles.slideUp);
+        if (sideDrawer !== styles.slideInRight) {
+          setMobileButtonClass("");
+          setScrolled(styles.slideUp);
+        }
       }
       setY(window.scrollY);
     },
@@ -34,13 +38,15 @@ const NavBar = (props) => {
   };
 
   useEffect(() => {
-    setY(window.scrollY);
-    window.addEventListener("scroll", handleNavigation);
+    if (sideDrawer !== styles.slideInRight) {
+      setY(window.scrollY);
+      window.addEventListener("scroll", handleNavigation);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleNavigation);
     };
-  }, [handleNavigation]);
+  }, [handleNavigation, sideDrawer]);
 
   return (
     <div className={`${scrolled} navBar`}>
@@ -57,11 +63,21 @@ const NavBar = (props) => {
           />
         </svg>
       </div>
+      <div className="nav-link-container logo-container-mobile" onClick={closeSideDrawer}>
+        <Link className="nav-link logo" to="/">
+          FirePlace
+        </Link>
+      </div>
       <div className={`${sideDrawer} nav-items-container`}>
-        <div className="nav-items-container-inner">
+        <div className={`${scrolled} nav-items-container-inner`}>
           <div className="nav-link-container" onClick={closeSideDrawer}>
             <Link className="nav-link" to="/gallery">
               גלריה
+            </Link>
+          </div>
+          <div className="nav-link-container logo-container" onClick={closeSideDrawer}>
+            <Link className="nav-link logo" to="/">
+              FirePlace
             </Link>
           </div>
           <div className="nav-link-container" onClick={closeSideDrawer}>

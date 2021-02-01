@@ -5,6 +5,17 @@
   height: 100vh;
   overflow: hidden;
   position: relative;
+  .slider-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .slider-header-text {
+      font-size: 40px;
+      color: white;
+      font-family: serif;
+    }
+  }
 }
 .slide {
   position: absolute;
@@ -18,7 +29,6 @@
   opacity: 0;
   background-size: cover;
   background-position: center;
-  
 }
 
 .slider .slide:nth-child(1) {
@@ -30,8 +40,6 @@
 .slider .slide:nth-child(3) {
   animation-delay: 18s;
 }
-
-
 
 @keyframes slider {
   0% {

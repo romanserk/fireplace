@@ -24,7 +24,7 @@ a {
 }
 a:hover {
   text-decoration: none!important;
-  color: #a59771!important;
+  color: var(--goldColor)!important;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -43,10 +43,10 @@ code {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #a59771; 
+  background: var(--goldColor); 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #a59771; 
+  background: var(--goldColor); 
 }

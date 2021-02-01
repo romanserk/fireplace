@@ -1,28 +1,9 @@
 .mask-container {
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.6);
   background-size: cover;
   position: relative;
-  .textContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    z-index: 500;
-    text-align: center;
-  }
-  .text-center {
-    width: fit-content;
-    margin: auto;
-  }
-  .mask-header {
-      border-bottom: 2px solid #a59771;
-      border-top: 2px solid #a59771;
-      font-family: Times;
-      margin-bottom: 20px;
-  }
+  
 }
 
 @media only screen and (max-width: 768px) {
