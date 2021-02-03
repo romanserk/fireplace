@@ -32,8 +32,11 @@
       }
     }
   }
+  .container {
+    width: 100% !important;
+    max-width: 85%!important;
+  }
 
- 
   .product-lower-left-col {
     padding-right: 40px;
     .product-features-list-header {
@@ -44,6 +47,14 @@
       margin-bottom: 40px;
       font-size: 14px;
       color: var(--fontLighterColor);
+    }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .product-lower-section {
+    .container {
+      width: 100% !important;
     }
   }
 }
