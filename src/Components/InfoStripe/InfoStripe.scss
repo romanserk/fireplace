@@ -59,8 +59,19 @@
   }
 }
 
-@media only screen and (max-width: var(--mobileWidth)) {
-    .arrow {
-        display: none;
-    }
+@media only screen and (max-width: 768px) {
+  .info-stripe-text {
+    display: none;
+  }
+  .info-stripe { 
+    height: 65px;
+    margin-top: -65px;
+  }
+  .info-header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 0px!important;
+    width: fit-content;
+  }
 }

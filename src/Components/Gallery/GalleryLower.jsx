@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Col, Row} from 'react-bootstrap';
 import GalleryItem from './GalleryItem'
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './Gallery.scss'
 
 const GalleryLower = ({galleryItems}) => {

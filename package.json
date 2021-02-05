@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "bootstrap-v4-rtl": "^4.5.2-1",
+    "emailjs-com": "^2.6.4",
     "node-sass": "^4.0.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

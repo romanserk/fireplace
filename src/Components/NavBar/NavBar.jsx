@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
+import staticContent from "../../staticContent/staticContent";
 import "./NavBar.scss";
 import styles from "./NavBar.module.css";
 
@@ -24,7 +25,7 @@ const NavBar = (props) => {
       }
       setY(window.scrollY);
     },
-    [y]
+    [y, sideDrawer]
   );
 
   const mobileNavButtonClickHandler = () => {
@@ -70,21 +71,43 @@ const NavBar = (props) => {
       </div>
       <div className={`${sideDrawer} nav-items-container`}>
         <div className={`${scrolled} nav-items-container-inner`}>
-          <div className="nav-link-container" onClick={closeSideDrawer}>
-            <Link className="nav-link" to="/gallery">
-              גלריה
-            </Link>
-          </div>
-          <div className="nav-link-container logo-container" onClick={closeSideDrawer}>
-            <Link className="nav-link logo" to="/">
-              FirePlace
-            </Link>
-          </div>
-          <div className="nav-link-container" onClick={closeSideDrawer}>
-            <Link className="nav-link" to="/contact">
-              צור קשר
-            </Link>
-          </div>
+          <Row className="nav-link-row">
+            <Col md={5}>
+              <div className="nav-link-group nav-link-group-right">
+                <div className="nav-link-container" onClick={closeSideDrawer}>
+                  <Link className="nav-link" to="/gallery">
+                    גלריה
+                  </Link>
+                </div>
+                <div className="nav-link-container" onClick={closeSideDrawer}>
+                  <Link className="nav-link" to="/faq">
+                    שאלות נפוצות
+                  </Link>
+                </div>
+              </div>
+            </Col>
+            <Col md={2}>
+              <div className="nav-link-container logo-container" onClick={closeSideDrawer}>
+                <Link className="nav-link logo" to="/">
+                  {staticContent.websiteName}
+                </Link>
+              </div>
+            </Col>
+            <Col md={5}>
+              <div className="nav-link-group nav-link-group-left">
+                <div className="nav-link-container" onClick={closeSideDrawer}>
+                  <Link className="nav-link" to="/contact">
+                    צור קשר
+                  </Link>
+                </div>
+                <div className="nav-link-container" onClick={closeSideDrawer}>
+                  <Link className="nav-link" to="/whoweare">
+                    מי אנחנו
+                  </Link>
+                </div>
+              </div>
+            </Col>
+          </Row>
         </div>
       </div>
     </div>

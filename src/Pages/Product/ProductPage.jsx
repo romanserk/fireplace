@@ -31,7 +31,7 @@ const ProductPage = () => {
                 <Link to="/contact" className="product-contact-button">
                   צור קשר
                 </Link>
-                <h3>{currentProduct.header}</h3>
+                <h3 className="product-lower-header">{currentProduct.header}</h3>
                 <br />
                 {currentProduct.text}
                 <p>

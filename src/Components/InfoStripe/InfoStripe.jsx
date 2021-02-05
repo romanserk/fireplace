@@ -14,7 +14,7 @@ const InfoStripe = ({ header }) => {
     <div className="info-stripe">
       <div className="info-header">{header}</div>
       <div className="info-stripe-arrow-container" onClick={scrollOnClick}>
-        למידע נוסף גלול למטה
+        <p className="info-stripe-text">למידע נוסף גלול למטה</p>
         <div className="arrow bounce" />
       </div>
     </div>

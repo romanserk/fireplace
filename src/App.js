@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -10,6 +10,7 @@ import Landing from "./Pages/Landing/Landing";
 import Contact from "./Components/Contact/Contact";
 import MainGallery from "./Pages/MainGallery/MainGallery";
 import ProductPage from "./Pages/Product/ProductPage";
+import WhoWeAre from "./Pages/WhoWeAre/WhoWeAre";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
                 <Route path="/contact" exact component={Contact} />
                 <Route path="/gallery" exact component={MainGallery} />
                 <Route path="/itempage/*" exact component={ProductPage} />
+                <Route path="/whoweare" exact component={WhoWeAre} />
                 {/* <Route path="/linkedinauth" component={Linkedinauth} /> */}
               </Switch>
 

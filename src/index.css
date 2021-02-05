@@ -12,6 +12,7 @@ body {
 * {
   direction: rtl!important;
   text-align: right;
+  box-sizing: border-box;
 }
 
 h1 {

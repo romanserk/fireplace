@@ -62,6 +62,7 @@ const Landing = () => {
             buttonLink={item.buttonLink}
             buttonText={item.buttonText}
             side={index % 2 === 0 ? "left" : "right"}
+            key={Math.random()}
           />
         );
       })}

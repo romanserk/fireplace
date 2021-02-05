@@ -5,7 +5,7 @@
   height: 60px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 5000;
   width: 100vw;
   font-family: serif;
 
@@ -21,16 +21,31 @@
     position: relative;
     height: 100%;
     width: 100%;
-
+    z-index: 100;
     .nav-items-container-inner {
       margin: auto;
       display: flex;
-      width: fit-content;
       height: 100%;
+      width: 100%;
+      .nav-link-row {
+        width: 100%;
+        .nav-link-group {
+          display: flex;
+          flex-wrap: wrap;
+          height: 100%;
+        }
+        .nav-link-group-right {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+      }
       .nav-link-container {
+        height: 100%;
         .nav-link {
           padding-top: 15px;
           height: 100%;
+          border-bottom: solid transparent 5px;
           &:hover {
             color: var(--goldColor) !important;
             border-bottom: solid var(--goldColor) 5px;
@@ -45,6 +60,7 @@
           font-weight: 800;
           font-family: serif;
           color: var(--goldColor) !important;
+          text-align: center;
           &:hover {
             border: none;
           }
@@ -52,8 +68,6 @@
       }
     }
   }
-
- 
 }
 
 @media only screen and (max-width: 768px) {
@@ -114,15 +128,32 @@
       right: -300px;
       position: fixed;
       height: 100vh;
-      width: 300px;
+      width: 250px;
       background: rgb(250, 246, 238);
       box-shadow: 10px -5px 10px rgba(138, 138, 138, 0.6) inset;
 
       .nav-items-container-inner {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        padding-top: 30px;
+        width: 250px;
+        .nav-link-row {
+          width: 100%;
+          .nav-link-group {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+          }
+          .nav-link-group-right {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+        }
         .nav-link-container {
+          height: fit-content;
+          width: 100%;
+          border-bottom: 1px solid rgba(207, 207, 207, 0.6);
           .nav-link {
             color: black !important;
             padding-top: 15px;
@@ -155,9 +186,5 @@
         color: #b4a783 !important;
       }
     }
-
-    
-    
   }
- 
 }

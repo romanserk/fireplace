@@ -34,7 +34,7 @@
   }
   .container {
     width: 100% !important;
-    max-width: 85%!important;
+    max-width: 85% !important;
   }
 
   .product-lower-left-col {
@@ -62,11 +62,23 @@
 @media only screen and (max-width: 768px) {
   .product-lower-section {
     padding: 30px 20px;
-    height: 100vh;
     width: 100vw;
 
     .product-lower-left-col {
       border: none;
+    }
+    .product-contact-button {
+      float: none !important;
+    }
+    .product-lower-header {
+      margin-top: 20px;
+    }
+    .product-text-row {
+      margin-bottom: 100px;
+      .product-lower-right-col {
+        border-left: none;
+        padding-left: 15px;
+      }
     }
   }
 }
