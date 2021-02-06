@@ -6,12 +6,33 @@ import fireplaceSm1 from "../images/Gallery/galleryImageSm1.jpg";
 import fireplaceSm2 from "../images/Gallery/galleryImageSm2.jpg";
 import fireplaceSm3 from "../images/Gallery/galleryImageSm3.jpg";
 
-const productsList = [
+export const categorie = [
+  {
+    id: 1,
+    name: "מובנה קיר",
+  },
+  {
+    id: 2,
+    name: "דו צדדי",
+  },
+  {
+    id: 3,
+    name: "מתאים לחוץ",
+  },
+  {
+    id: 4,
+    name: "קמינים גז",
+  },
+];
+
+export const productsList = [
   {
     id: 1,
     imageLg: fireplace1,
     imageSm: fireplaceSm1,
+    categorie: categorie[0],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -44,7 +65,9 @@ const productsList = [
     id: 2,
     imageLg: fireplace2,
     imageSm: fireplaceSm2,
+    categorie: categorie[1],
     header: "לורם דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -77,7 +100,9 @@ const productsList = [
     id: 3,
     imageLg: fireplace3,
     imageSm: fireplaceSm3,
+    categorie: categorie[0],
     header: "גולר מונפרר סוברט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -110,7 +135,9 @@ const productsList = [
     id: 2,
     imageLg: fireplace2,
     imageSm: fireplaceSm2,
+    categorie: categorie[1],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -143,7 +170,9 @@ const productsList = [
     id: 3,
     imageLg: fireplace3,
     imageSm: fireplaceSm3,
+    categorie: categorie[3],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -176,7 +205,9 @@ const productsList = [
     id: 1,
     imageLg: fireplace1,
     imageSm: fireplaceSm1,
+    categorie: categorie[2],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -209,7 +240,9 @@ const productsList = [
     id: 3,
     imageLg: fireplace3,
     imageSm: fireplaceSm3,
+    categorie: categorie[2],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -242,7 +275,9 @@ const productsList = [
     id: 1,
     imageLg: fireplace1,
     imageSm: fireplaceSm1,
+    categorie: categorie[3],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -275,7 +310,9 @@ const productsList = [
     id: 2,
     imageLg: fireplace2,
     imageSm: fireplaceSm2,
+    categorie: categorie[1],
     header: "לורם איפסום דולור סיט אמט",
+    tags: ["קיר", "חוץ"],
     text: (
       <div>
         <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים.</p>
@@ -306,4 +343,9 @@ const productsList = [
   },
 ];
 
-export default productsList;
+export const productsListNoImages = productsList.map((item) => {
+  return {
+    id: item.id,
+    header: item.header,
+  };
+});

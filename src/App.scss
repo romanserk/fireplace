@@ -120,6 +120,25 @@
   text-align: center;
 }
 
+.page-header-stripe {
+  background: #262626;
+  color: #fff;
+  height: 190px;
+  position: relative;
+  padding-top: 100px;
+
+  .page-header-stripe-text {
+    font-size: 40px;
+    color: white;
+    font-family: serif;
+    border-bottom: 2px solid var(--goldColor);
+    border-top: 2px solid var(--goldColor);
+    width: fit-content;
+    margin: auto;
+    max-width: 100%;
+  }
+}
+
 .headers-text {
   font-size: 40px;
   color: white;

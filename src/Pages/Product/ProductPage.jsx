@@ -6,7 +6,7 @@ import Box from "../../Components/Box/Box";
 import InfoStripe from "../../Components/InfoStripe/InfoStripe";
 import GalleryLower from "../../Components/Gallery/GalleryLower";
 
-import productsList from "../../JsonLists/itemsList";
+import { productsList } from "../../JsonLists/itemsList";
 
 const ProductPage = () => {
   const location = useLocation();

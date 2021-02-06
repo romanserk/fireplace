@@ -2,14 +2,22 @@ import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import staticContent from "../../staticContent/staticContent";
+import { useHistory } from "react-router-dom";
 import "./NavBar.scss";
 import styles from "./NavBar.module.css";
 
-const NavBar = (props) => {
+import searchIcon from "../../images/icons/search-icon.png";
+
+import { categorie } from "../../JsonLists/itemsList";
+
+const NavBar = () => {
+  const history = useHistory();
   const [scrolled, setScrolled] = useState();
   const [y, setY] = useState(0);
   const [sideDrawer, setSideDrawer] = useState();
   const [mobileButtonClass, setMobileButtonClass] = useState("");
+  const [categoriesExpand, setCategoriesExpant] = useState();
+  const [searchValue, setSearchValue] = useState("");
 
   const handleNavigation = useCallback(
     (e) => {
@@ -33,7 +41,7 @@ const NavBar = (props) => {
     setMobileButtonClass(mobileButtonClass === "opened" ? "" : "opened");
   };
 
-  const closeSideDrawer = () => {
+  const closeSideDrawer = (e) => {
     setSideDrawer(styles.slideOutRight);
     setMobileButtonClass("");
   };
@@ -48,6 +56,21 @@ const NavBar = (props) => {
       window.removeEventListener("scroll", handleNavigation);
     };
   }, [handleNavigation, sideDrawer]);
+
+  const expantCategiriesNav = () => {
+    return categoriesExpand && typeof window !== "undefined" && window.innerWidth > 768 ? "flex" : "none";
+  };
+
+  const searchAction = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const searchSubmit = (e) => {
+    e.preventDefault();
+    closeSideDrawer();
+    setSearchValue("");
+    history.push(`/gallery/search/${searchValue}`);
+  };
 
   return (
     <div className={`${scrolled} navBar`}>
@@ -74,19 +97,33 @@ const NavBar = (props) => {
           <Row className="nav-link-row">
             <Col md={5}>
               <div className="nav-link-group nav-link-group-right">
+                <div className="nav-link-container nav-search">
+                  <form onSubmit={searchSubmit} className="nav-search-form">
+                    <img alt="SEARCH" src={searchIcon}></img>
+                    <input placeholder="חיפוש" type="text" value={searchValue} onChange={searchAction}></input>
+                  </form>
+                </div>
+                <div
+                  className="nav-link-container nav-link-expand"
+                  onMouseEnter={() => {
+                    setCategoriesExpant(true);
+                  }}
+                  onMouseLeave={() => {
+                    setCategoriesExpant(false);
+                  }}
+                  onClick={closeSideDrawer}
+                >
+                  <div className="nav-link">קטגוריות</div>
+                  <div className="arrow"></div>
+                </div>
                 <div className="nav-link-container" onClick={closeSideDrawer}>
                   <Link className="nav-link" to="/gallery">
                     גלריה
                   </Link>
                 </div>
-                <div className="nav-link-container" onClick={closeSideDrawer}>
-                  <Link className="nav-link" to="/faq">
-                    שאלות נפוצות
-                  </Link>
-                </div>
               </div>
             </Col>
-            <Col md={2}>
+            <Col md={2} className="logo-col" >
               <div className="nav-link-container logo-container" onClick={closeSideDrawer}>
                 <Link className="nav-link logo" to="/">
                   {staticContent.websiteName}
@@ -105,9 +142,34 @@ const NavBar = (props) => {
                     מי אנחנו
                   </Link>
                 </div>
+                <div className="nav-link-container" onClick={closeSideDrawer}>
+                  <Link className="nav-link" to="/faq">
+                    שאלות נפוצות
+                  </Link>
+                </div>
               </div>
             </Col>
           </Row>
+        </div>
+      </div>
+      <div
+        className="categories-nav"
+        style={{ display: `${expantCategiriesNav()}` }}
+        onMouseEnter={() => {
+          setCategoriesExpant(true);
+        }}
+        onMouseLeave={() => {
+          setCategoriesExpant(false);
+        }}
+      >
+        <div className="categories-nav-inner">
+          {categorie.map((item) => {
+            return (
+              <Link to={`/gallery/variant${item.id}`} className="categories-nav-link" key={Math.random()}>
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

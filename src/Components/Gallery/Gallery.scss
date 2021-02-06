@@ -75,6 +75,16 @@
   }
 }
 
+.search-gallery-container {
+  .search-results {
+    width: fit-content;
+    margin: auto;
+    margin-top: -20px;
+    margin-bottom: 5px;
+    color: var(--fontLighterColor);
+  }
+}
+
 @keyframes puff-in-center {
   0% {
     transform: scale(1.2);
